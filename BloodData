@@ -1,0 +1,25 @@
+class BloodData {
+    private String bloodType;
+    private char rhFactor;
+
+    // Default constructor
+    public BloodData() {
+        this.bloodType = "O";
+        this.rhFactor = '+';
+    }
+
+    // Overloaded constructor
+    public BloodData(String bloodType, char rhFactor) {
+        this.bloodType = bloodType;
+        this.rhFactor = rhFactor;
+    }
+
+    // Getters
+    public String getBloodType() {
+        return bloodType;
+    }
+
+    public char getRhFactor() {
+        return rhFactor;
+    }
+}
