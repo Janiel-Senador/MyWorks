@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class TestBloodData {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        BloodData defaultBloodData = new BloodData();
+        System.out.println("Default Blood Data: " + defaultBloodData.getBloodType() + defaultBloodData.getRhFactor());
+
+        System.out.print("Enter blood type (A, B, AB, O): ");
+        String bloodType = scanner.next();
+        System.out.print("Enter Rh factor (+ or -): ");
+        char rhFactor = scanner.next().charAt(0);
+
+        BloodData userBloodData = new BloodData(bloodType, rhFactor);
+        System.out.println("User Blood Data: " + userBloodData.getBloodType() + userBloodData.getRhFactor());
+
+        scanner.close();
+    }
+}
