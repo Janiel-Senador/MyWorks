@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class TestPatient {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Default Patient
+        Patient defaultPatient = new Patient();
+        displayPatient(defaultPatient);
+
+        // Patient with only ID and age input
+        System.out.print("Enter Patient ID: ");
+        int id = scanner.nextInt();
+        System.out.print("Enter Patient Age: ");
+        int age = scanner.nextInt();
+
+        Patient patientWithDefaults = new Patient(id, age, "O", '+'); // Default BloodData
+        displayPatient(patientWithDefaults);
+
+        // Fully customized Patient
+        System.out.print("Enter Patient ID: ");
+        int id2 = scanner.nextInt();
+        System.out.print("Enter Patient Age: ");
+        int age2 = scanner.nextInt();
+        System.out.print("Enter Blood Type (A, B, AB, O): ");
+        String bloodType = scanner.next();
+        System.out.print("Enter Rh Factor (+ or -): ");
+        char rhFactor = scanner.next().charAt(0);
+
+        Patient fullPatient = new Patient(id2, age2, bloodType, rhFactor);
+        displayPatient(fullPatient);
+
+        scanner.close();
+    }
+
+    public static void displayPatient(Patient patient) {
+        System.out.println("\nPatient Details:");
+        System.out.println("ID: " + patient.getIdNumber());
+        System.out.println("Age: " + patient.getAge());
+        System.out.println("Blood Type: " + patient.getBloodData().getBloodType() + patient.getBloodData().getRhFactor());
+    }
+}
